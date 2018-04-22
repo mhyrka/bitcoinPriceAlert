@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BTC Price Alert</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <header class="title-bar">
+      <!-- <a href="https://fontmeme.com/fonts/ubuntu-font/"><img src="https://fontmeme.com/permalink/180422/ee634e75d318dcf88ec7f53e056a9280.png" alt="ubuntu-font" border="0"></a> -->
+      <h1>coin alert</h1>
+    </header>
+    <section class="currency-selection">
+      <div class="text-and-currency-selection">
+        <div class="input-field col s12">
+          <select class="currency-options">
+            <option value="" disabled selected>Please choose your currency</option>
+            <option value="1">US Dollar (USD)</option>
+            <option value="2">Great British Pound (GBP)</option>
+            <option value="3">Euro (EUR)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="current-price">
+      <h3>Current Price: </h3>
+    </section>
+
+    <section class="alert-parameters">
+      <p id="set-parameters">Set your Parameters</p>
+
+      <div class="set-by-percentage">
+        <i id="plus" class="fas fa-plus"></i>
+        <div class="input-field col s12">
+          <select class="currency-options">
+            <option value="" disabled selected>Percent Increase</option>
+            <option value="1">.01%</option>
+            <option value="2">5%</option>
+            <option value="3">10%</option>
+          </select>
+        </div>
+        <i id="minus" class="fas fa-minus"></i>
+        <div class="input-field col s12">
+          <select class="currency-options">
+            <option value="" disabled selected>Percent Decrease</option>
+            <option value="1">.01%</option>
+            <option value="2">5%</option>
+            <option value="3">10%</option>
+          </select>
+        </div>
+      </div>
+
+
+    </section>
+
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
