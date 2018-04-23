@@ -1,4 +1,4 @@
-const get_price_url = 'https://api.coindesk.com/v1/bpi/currentprice/USDjson'
+const get_price_url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
 
 function append(parent, child) {
   return parent.appendChild(child)
@@ -26,5 +26,9 @@ function displayPrice(data) {
 window.setInterval(function(){
   getPrice()
 }, 1000)
+
+function setCurrency(choice, currencyId) {
+
+}
 
 getPrice()

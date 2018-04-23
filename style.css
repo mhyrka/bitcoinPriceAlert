@@ -1,14 +1,3 @@
-/* body {
-  background-color: white;
-  height: 100vh;
-  width: 100vw;
-}
-
-h1 {
-  height: 20vh;
-  width: 30vw;
-  color: red;
-} */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -34,7 +23,6 @@ body {
   height: 100vh;
   width: 100vw;
   background: #0074D9;
-
 }
 
 #title {
@@ -42,7 +30,7 @@ body {
 }
 
 header {
-  height: 20vh;
+  height: 22vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +59,8 @@ h2 {
 h3 {
   margin-top: 2.5vh;
   font-size: 200%;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
 }
 
 i {
@@ -79,43 +69,87 @@ i {
 
 #set-parameters {
   font-size: 500%;
+  margin-top: 5vh;
+  font-weight: bold;
+  /* font-style: italic; */
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  /* font-style: italic; */
 }
 
 .alert-parameters {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  height: 40vh;
+  height: 42vh;
   width: 100vw;
+  /* border-bottom: 2px solid black; */
 }
 
 .set-by-percentage {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
-  height: 12.5vh;
+  align-items: flex-start;
+  height: 9.5vh;
   width: 100vw;
-
+  margin-top: 2.5vh;
 }
+
+.set-alert-button {
+  width: 100vw;
+  height: 13vh;
+}
+
+#increase-dropdown {
+  width: 50vw;
+}
+
+#decrease-dropdown {
+  width: 50vw;
+}
+
+#percent-increase {
+  font-size: 200%;
+  padding-left: 20vw;
+}
+
+#percent-decrease {
+  font-size: 200%;
+  padding-left: 20vw;
+}
+
 
 .currency-selection {
   width: 100vw;
-  height: 5vh;
-  border-bottom: 2px solid black;
+  height: 7vh;
+  /* margin-top: 2.5vh; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.custom-price-alert {
+  display: flex;
+  flex-direction: row;
+  height: 7vh;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2.5vh;
+}
+
 .current-price {
   width: 100vw;
-  height: 20vh;
+  height: 22vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around   ;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   font-size: 200%;
+
 
 }
 
@@ -125,7 +159,28 @@ i {
 }
 
 .currency-options {
-  font-size: 200%;
+  font-size: 300%;
+  width: 100vw;
+  height: 9.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  padding-left: 33vw;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #0074D9;
+  font-family: Arial;
+  color: #ffffff;
+  border-top: 1px solid black;
+  border-bottom: 2px solid black;
+
+  /* background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9); */
 
 }
 
@@ -141,6 +196,54 @@ h1 {
   font-weight: bold;
   font-style: italic;
   font-size: 800%;
+}
+
+h4 {
+  font-size: 400%;
+  height: 70%;
+  width: 40vw;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+}
+
+input {
+  width: 40vw;
+  height: 100%;
+  font-size: 300%;
+}
+
+select {
+  height: 7vh;
+  width: 30vw;
+
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 500%;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: 2px solid black;
+}
+
+.percent-change-options {
+  width: 50vw;
+  font-size: 300%;
+  padding-left: 17.5vw;
+  border: 2px solid black;
+  margin-top: 2.5vh;
 }
 
 @media (min-width: 1000px) {
