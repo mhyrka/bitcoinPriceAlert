@@ -22,9 +22,9 @@
     <section class="alert-parameters">
 
 
-      <section class="currency-selection">
+      <!-- <section class="currency-selection"> -->
         <div class="text-and-currency-selection">
-          <div class="input-field col s12">
+          <div class="input-field col s12" id="curr-selec">
             <select class="currency-options">
               <option value="" disabled selected><p id="currency-choice">Select Currency</p></option>
               <option value="1">US Dollar (USD)</option>
@@ -33,27 +33,27 @@
             </select>
           </div>
         </div>
-      </section>
+      <!-- </section> -->
 
       <p id="set-parameters">Schedule Alerts</p>
 
       <div class="set-by-percentage">
         <!-- <i id="plus" class="fas fa-plus"></i> -->
         <div class="input-field col s12" id="increase-dropdown">
-          <select class="percent-change-options">
+          <select class="percent-change-options" id="percentGain">
             <option value="" id="percent-increase" disabled selected>% Gain</option>
-            <option value="1">.01%</option>
-            <option value="2">5%</option>
-            <option value="3">10%</option>
+            <option value=".01">.01%</option>
+            <option value="5">5%</option>
+            <option value="10">10%</option>
           </select>
         </div>
         <!-- <i id="minus" class="fas fa-minus"></i> -->
         <div class="input-field col s12" id="decrease-dropdown">
-          <select class="percent-change-options">
+          <select class="percent-change-options" id="percentLoss">
             <option value="" id="percent-decrease" disabled selected>% Loss</option>
-            <option value="1">.01%</option>
-            <option value="2">5%</option>
-            <option value="3">10%</option>
+            <option value=".01">.01%</option>
+            <option value="5">5%</option>
+            <option value="10">10%</option>
           </select>
         </div>
       </div>
