@@ -4,25 +4,32 @@
     <meta charset="utf-8">
     <title>BTC Price Alert</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" media="screen and (min-width: 800px)" href="laptop.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
   <body>
     <header class="title-bar">
-      <!-- <a href="https://fontmeme.com/fonts/ubuntu-font/"><img src="https://fontmeme.com/permalink/180422/ee634e75d318dcf88ec7f53e056a9280.png" alt="ubuntu-font" border="0"></a> -->
+      <div class="menu">
+        <i class="material-icons" id="menu" onclick="openNav()">menu</i>
+      </div>
+
+      <nav class="sidenav">
+        <p id="close" class=".closebtn" onclick="closeNav()">X</p>
+        <br>
+        <br>
+        <p id="about-coin-alert">Coin Alert offers up-to-the-minute value of Bitcoin across 3 different currencies. It also allows the user to set parameters to alert he or she to buy or sell at specified values</p>
+      </nav>
       <h1>coin alert</h1>
     </header>
 
-
     <section class="current-price">
-      <h3>Current Price: </h3>
+      <h3><i class="fab fa-bitcoin" id="bitcoin"></i>   Current Price: </h3>
     </section>
 
     <section class="alert-parameters">
-
-
-      <!-- <section class="currency-selection"> -->
         <div class="text-and-currency-selection">
           <div class="input-field col s12" id="curr-selec">
             <select class="currency-options">
@@ -69,6 +76,7 @@
     <section class="set-alert-button">
       <button type="button" name="button">Set Alert!</button>
     </section>
+    <!-- <script type="text/javascript" src="app-test.js"></script> -->
     <script type="text/javascript" src="app.js"></script>
   </body>
 </html>

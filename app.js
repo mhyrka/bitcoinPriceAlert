@@ -1,5 +1,5 @@
 const get_price_url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
-let currencySelected = 'USD'
+
 let globalCurrentPrice = 0
 
 let body = document.querySelector('body')
@@ -11,13 +11,16 @@ append(currentPriceSection, price)
 
 let currencyOptionsDropdown = document.querySelector('.currency-options')
 let initialValue = {}
+let currencySelected = 'USD'
 let percentLoss = 0
 let percentGain = 0
 let customPrice = 0
 
 let setAlertButton = document.querySelector('button')
 setAlertButton.addEventListener('click', event => {
-  setAlert()
+  window.myInterval = setInterval(function(){
+    setAlert()
+  }, 1000), getFormInput()
 })
 
 currencyOptionsDropdown.addEventListener('change', event => {
@@ -55,33 +58,43 @@ function setParameters()  {
   })
   percentGainDropdown.addEventListener('change', event => {
     percentGain = parseFloat(event.target.value)
-    console.log(percentGain);
+    console.log(percentGain)
   })
 
 }
 setParameters()
 
+
+
 function setAlert() {
-  console.log('alert set!');
-  let formInput = document.querySelector('input')
-  customPrice = formInput.value
-  if (globalCurrentPrice > (initialValue.currencySelected * percentGain + initialValue.currencySelected)) {
-    alert('WORKING!')
-    console.log('working!');
+  console.log('check me', ((initialValue[currencySelected] * (percentLoss / 100)) + initialValue[currencySelected]));
+  console.log(initialValue[currencySelected]);
+  if (globalCurrentPrice > ((initialValue[currencySelected] * (percentGain / 100)) + initialValue[currencySelected])) {
+    console.log('working - gain')
+    window.alert(`Bitcoin has gained ${percentGain}%`)
+    clearInterval(window.myInterval)
+  } else if (globalCurrentPrice < (initialValue[currencySelected] - (initialValue[currencySelected] * (percentLoss / 100)))) {
+    console.log('working - loss')
+    window.alert(`Bitcoin has lost ${percentLoss}%`)
+    clearInterval(window.myInterval)
+  } else {
+    // console.log('somethings wrong');
   }
-  // resetForm()
 }
 
-// function resetForm() {
-//   let formInput = document.querySelector('input')
-//   formInput.value = null
-// }
+function getFormInput() {
+  let formInput = document.querySelector('input')
+  customPrice = formInput.value
+  console.log('hello')
+}
+
 
 
 function displayPrice(data) {
   let currentPrice = data.bpi[currencySelected].rate_float
   price.textContent = currentPrice
   globalCurrentPrice = currentPrice
+  // console.log(globalCurrentPrice)
 }
 
 
@@ -100,12 +113,10 @@ function updateCurrency(choice) {
     case "3":
       console.log('case 3');
       currencySelected = "EUR"
+      console.log(currencySelected);
       break;
     default:
-
   }
-
-
 }
 
 
@@ -120,3 +131,16 @@ window.setInterval(function(){
 
 getPrice()
 fetchInitialValue()
+
+let menu = document.querySelector('#menu')
+let about = document.querySelector('p')
+
+
+
+function openNav() {
+  document.querySelector('.sidenav').style.width = "250px";
+}
+
+function closeNav() {
+  document.querySelector('.sidenav').style.width = "0px";
+}
