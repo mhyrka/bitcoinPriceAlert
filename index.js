@@ -6,6 +6,10 @@ let body = document.querySelector('body')
 
 let currentPriceSection = document.querySelector('.current-price')
 let price = document.createElement('h2')
+let formInput = document.querySelector('input')
+
+let sidenav = document.querySelector('.sidenav')
+
 append(currentPriceSection, price)
 
 
@@ -18,16 +22,21 @@ let customPrice = 0
 
 let setAlertButton = document.querySelector('button')
 setAlertButton.addEventListener('click', event => {
-  window.myInterval = setInterval(function(){
-    setAlert()
-  }, 1000), getFormInput()
+  alertEventHandler()
 })
 
 currencyOptionsDropdown.addEventListener('change', event => {
-  event.preventDefault();
+  event.preventDefault()
   updateCurrency(event.target.value)
   getPrice()
 })
+
+function alertEventHandler() {
+  window.alert('Alert Set!')
+  window.myInterval = setInterval(function(){
+    setAlert()
+  }, 1000), getFormInput()
+}
 
 function getPrice() {
   fetch(get_price_url)
@@ -45,7 +54,17 @@ function setInitialValue(data) {
   initialValue.USD = data.bpi.USD.rate_float
   initialValue.GBP = data.bpi.GBP.rate_float
   initialValue.EUR = data.bpi.EUR.rate_float
-  console.log(initialValue);
+}
+
+function displayPrice(data) {
+  let currentPrice = data.bpi[currencySelected].rate_float
+  globalCurrentPrice = currentPrice
+  if (currencySelected === 'USD') {
+    price.textContent = `$ ${currentPrice}`
+  } else if (currencySelected === 'GBP') {
+    price.textContent = `£ ${currentPrice}`
+  } else if (currencySelected === 'EUR')
+    price.textContent = `€ ${currentPrice}`
 }
 
 function setParameters()  {
@@ -54,11 +73,9 @@ function setParameters()  {
 
   percentLossDropdown.addEventListener('change', event => {
     percentLoss = parseFloat(event.target.value)
-    console.log(percentLoss);
   })
   percentGainDropdown.addEventListener('change', event => {
     percentGain = parseFloat(event.target.value)
-    console.log(percentGain)
   })
 
 }
@@ -67,53 +84,39 @@ setParameters()
 
 
 function setAlert() {
-  console.log('check me', ((initialValue[currencySelected] * (percentLoss / 100)) + initialValue[currencySelected]));
-  console.log(initialValue[currencySelected]);
   if (globalCurrentPrice > ((initialValue[currencySelected] * (percentGain / 100)) + initialValue[currencySelected])) {
-    console.log('working - gain')
     window.alert(`Bitcoin has gained ${percentGain}%`)
     clearInterval(window.myInterval)
   } else if (globalCurrentPrice < (initialValue[currencySelected] - (initialValue[currencySelected] * (percentLoss / 100)))) {
-    console.log('working - loss')
     window.alert(`Bitcoin has lost ${percentLoss}%`)
     clearInterval(window.myInterval)
-  } else {
-    // console.log('somethings wrong');
+  } else if (parseInt(globalCurrentPrice) === parseInt(customPrice)){
+    window.alert(`Bitcoin has reached value: ${customPrice}!`)
+    clearInterval(window.myInterval)
   }
 }
 
 function getFormInput() {
   let formInput = document.querySelector('input')
   customPrice = formInput.value
-  console.log('hello')
+  resetForm()
 }
 
-
-
-function displayPrice(data) {
-  let currentPrice = data.bpi[currencySelected].rate_float
-  price.textContent = currentPrice
-  globalCurrentPrice = currentPrice
-  // console.log(globalCurrentPrice)
+function resetForm() {
+  formInput.value = ''
 }
-
 
 function updateCurrency(choice) {
 
   switch (choice) {
     case "1":
-      console.log('case 1');
       currencySelected = "USD"
       break;
     case "2":
-      console.log('case 2');
       currencySelected = "GBP"
-      console.log(currencySelected);
       break;
     case "3":
-      console.log('case 3');
       currencySelected = "EUR"
-      console.log(currencySelected);
       break;
     default:
   }
@@ -138,9 +141,14 @@ let about = document.querySelector('p')
 
 
 function openNav() {
-  document.querySelector('.sidenav').style.width = "250px";
+  let main = document.querySelector('main')
+  sidenav.setAttribute('style', 'width: 300px; padding-left: 2.5vw; padding-right: 2.5vw;')
+  main.setAttribute('style', '-webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px);-ms-filter: blur(5px); filter: blur(5px);')
 }
 
 function closeNav() {
-  document.querySelector('.sidenav').style.width = "0px";
+  let main = document.querySelector('main')
+  sidenav.setAttribute('style', 'padding-left: 0; padding-right: 0')
+  document.querySelector('.sidenav').style.width = "0px"
+  main.setAttribute('style', '-webkit-filter: none; -moz-filter: none; -o-filter: none;-ms-filter: none; filter: none;')
 }

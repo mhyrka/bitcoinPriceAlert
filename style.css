@@ -91,8 +91,6 @@ h3 {
 .set-alert-button {
 	width: 100vw;
 	height: 13vh;
-	/* color: #0074D9; */
-
 }
 
 #increase-dropdown {
@@ -130,11 +128,8 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around   ;
-	/* border-bottom: 1px solid black; */
+	justify-content: space-around;
 	font-size: 200%;
-
-
 }
 
 .current-price-label {
@@ -168,19 +163,13 @@ h3 {
 	text-align: center;
 }
 
-h1 {
-	font: Ubuntu;
+
+nav {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 125%;
 	font-weight: bold;
 	font-style: italic;
-	font-size: 800%;
-}
-
-h4 {
-	font-size: 400%;
-	height: 70%;
-	width: 40vw;
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: bold;
+	color: black;
 }
 
 input {
@@ -212,6 +201,7 @@ button {
 	padding: 10px 20px 10px 20px;
 	text-decoration: none;
 	border: 2px solid black;
+	margin-top: 2.5vh;
 }
 
 .percent-change-options {
@@ -223,52 +213,47 @@ button {
 }
 
 .sidenav {
-	height: 100%; /* 100% Full-height */
-	width: 0; /* 0 width - change this with JavaScript */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Stay on top */
-	top: 0; /* Stay at the top */
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
 	left: 0;
-	background-color: #ffffcc; /* Black*/
-	overflow-x: hidden; /* Disable horizontal scroll */
-	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	background-color: 	#F0F8FF;
+	overflow-x: hidden;
+	transition: 0.5s;
+	line-height: 8vh;
 }
-/* The navigation menu links */
+
 .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
+
 .sidenav a:hover {
-    color: #f1f1f1;
+  color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+
+.sidenav #close {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
+  right: 10px;
+  font-size: 26px;
   margin-left: 50px;
-}
-
-#close {
-	color: blue;
-	height: 20px;
-	width: 20px;
 	cursor: pointer;
+	color: #0074D9;
 }
 
 #about-coin-alert {
 	color: #0074D9;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
   padding: 20px;
@@ -343,10 +328,8 @@ button {
 		  font-size: 500%;
 		  margin-top: 4vh;
 		  font-weight: bold;
-		  /* font-style: italic; */
 		  font-family: 'Ubuntu', sans-serif;
 		  font-weight: bold;
-		  /* font-style: italic; */
 		}
 
 		.alert-parameters {
@@ -356,7 +339,6 @@ button {
 		  align-items: center;
 		  height: 43vh;
 		  width: 100vw;
-		  /* border-bottom: 2px solid black; */
 		}
 
 		.set-by-percentage {
@@ -371,8 +353,8 @@ button {
 
 		.set-alert-button {
 		  width: 100vw;
-		  height: 13vh;
-			/* color: #0074D9; */
+		  height: 10vh;
+
 
 		}
 
@@ -414,8 +396,6 @@ button {
 		  justify-content: space-around   ;
 		  border-bottom: 1px solid black;
 		  font-size: 200%;
-
-
 		}
 
 		.current-price-label {
@@ -509,7 +489,6 @@ button {
 
 @media only screen
 	and (min-device-width: 620px)
-	/* and (max-device-width: 623px) */
 	and (-webkit-min-device-pixel-ratio: 1) {
 		body {
 		  background-color: rgb(255, 249, 239);
@@ -539,6 +518,10 @@ button {
 		h4 {
 		  font-size: 300%;
 		  padding-left: 15vw;
+			height: 70%;
+			width: 40vw;
+			font-family: 'Ubuntu', sans-serif;
+			font-weight: bold;
 		}
 		section {
 		  font-size: auto;
@@ -572,6 +555,7 @@ button {
 		}
 		.custom-price-alert {
 		  font-size: 50%;
+			height: 10vh;
+			margin-top: 5vh;
 		}
-
 	}
