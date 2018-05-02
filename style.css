@@ -508,6 +508,9 @@ button {
 		}
 
 		h1 {
+			font-family: 'Ubuntu', sans-serif;
+			font-weight: bold;
+			font-style: italic;
 		  font-size: 400%;
 			margin-right: 4.5vw;
 		}
