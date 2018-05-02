@@ -435,7 +435,7 @@ button {
 		}
 
 		h1 {
-		  font: Ubuntu;
+		  font-family: 'Ubuntu', sans-serif;
 		  font-weight: bold;
 		  font-style: italic;
 		  font-size: 800%;
