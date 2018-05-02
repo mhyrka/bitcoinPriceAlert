@@ -44,6 +44,7 @@ h1 {
 	font-size: 400%;
 	color: #0074D9;
 	text-shadow: #000 .35vw .35vw .35vw;
+	margin-right: 4.5vw;
 }
 
 h2 {
@@ -439,6 +440,7 @@ button {
 		  font-weight: bold;
 		  font-style: italic;
 		  font-size: 800%;
+			margin-right: 4.5vw;
 		}
 
 		h4 {
@@ -507,6 +509,7 @@ button {
 
 		h1 {
 		  font-size: 400%;
+			margin-right: 4.5vw;
 		}
 
 		h2 {
