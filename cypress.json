@@ -1,0 +1,5 @@
+{
+  "baseURL": "",
+  "integrationFolder": "tests",
+  "screenRecording": false
+}

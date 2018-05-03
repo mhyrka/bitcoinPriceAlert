@@ -1,0 +1,27 @@
+{
+  "name": "bitcoinPriceAlert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^2.1.0",
+    "desandro-classie": "^1.0.1",
+    "http-server": "^0.11.1",
+    "light-server": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhyrka/bitcoinPriceAlert.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhyrka/bitcoinPriceAlert/issues"
+  },
+  "homepage": "https://github.com/mhyrka/bitcoinPriceAlert#readme"
+}
