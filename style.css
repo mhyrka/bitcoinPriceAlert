@@ -387,6 +387,7 @@ button {
 		  justify-content: space-around;
 		  align-items: center;
 		  margin-top: 4.05vh;
+			font-size: 80%;
 		}
 
 		.current-price {

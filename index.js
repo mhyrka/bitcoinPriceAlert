@@ -84,10 +84,10 @@ setParameters()
 
 
 function setAlert() {
-  if (globalCurrentPrice > ((initialValue[currencySelected] * (percentGain / 100)) + initialValue[currencySelected])) {
+  if (globalCurrentPrice > ((initialValue[currencySelected] * (percentGain / 100)) + initialValue[currencySelected]) && percentGain !== 0) {
     window.alert(`Bitcoin has gained ${percentGain}%`)
     clearInterval(window.myInterval)
-  } else if (globalCurrentPrice < (initialValue[currencySelected] - (initialValue[currencySelected] * (percentLoss / 100)))) {
+  } else if (globalCurrentPrice < (initialValue[currencySelected] - (initialValue[currencySelected] * (percentLoss / 100))) && percentLoss !== 0) {
     window.alert(`Bitcoin has lost ${percentLoss}%`)
     clearInterval(window.myInterval)
   } else if (parseInt(globalCurrentPrice) === parseInt(customPrice)){
