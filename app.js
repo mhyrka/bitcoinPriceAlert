@@ -68,6 +68,8 @@ function setAlert() {
   if (globalCurrentPrice > (initialValue.currencySelected * percentGain + initialValue.currencySelected)) {
     alert('WORKING!')
     console.log('working!');
+  } else if (globalCurrentPrice < (initialValue.currencySelected * percentGain + initialValue.currencySelected)) {
+
   }
   // resetForm()
 }
@@ -105,7 +107,6 @@ function updateCurrency(choice) {
 
   }
 
-
 }
 
 
@@ -115,6 +116,10 @@ function append(parent, child) {
 
 window.setInterval(function(){
   getPrice()
+}, 1000)
+
+window.setInterval(function(){
+  setAlert()
 }, 1000)
 
 
